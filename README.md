@@ -29,3 +29,9 @@ Retro client:
     public static GitHubService getApiService() {
         return getRetrofitInstance().create(GitHubService.class);
     }
+    
+And in main class we use object of retro client:
+
+    GitHubService api = RetroClient.getApiService();
+ 
+    Call<Contributor> call = api.repoContributors("andrey56097", "Android-app-test-2");
