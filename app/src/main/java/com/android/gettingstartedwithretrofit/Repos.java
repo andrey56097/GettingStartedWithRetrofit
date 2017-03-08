@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by batsa on 06.03.2017.
  */
 
-public class Contributor {
+public class Repos {
 
     @SerializedName("id")
     @Expose

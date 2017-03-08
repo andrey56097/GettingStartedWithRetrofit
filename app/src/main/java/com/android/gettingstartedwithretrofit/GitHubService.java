@@ -3,8 +3,6 @@ package com.android.gettingstartedwithretrofit;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
@@ -16,8 +14,17 @@ public interface GitHubService {
 
 
     @GET("repos/{owner}/{repo}")
-    Call<Contributor> repoContributors(
+    Call<Repos> repoContributors(
             @Path("owner") String owner,
             @Path("repo") String repo);
+
+
+//    @GET("users/{owner}/repos")
+//    Call<ReposList> reposOfUser(
+//            @Path("owner") String owner);
+
+
+    @GET("users/{user}/repos")
+    Call<List<Repos>> listRepos(@Path("user") String user);
 
 }
